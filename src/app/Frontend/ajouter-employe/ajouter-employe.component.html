@@ -1,0 +1,68 @@
+<div class="container mt-3">
+    <h2>Ajouter utilisateur</h2>
+    <form #userForm="ngForm" (ngSubmit)="submit(userForm)">
+        <!--cin-->
+        <div class="mb-3 mt-3">
+            <label for="cin">CIN:</label>
+            <input type="text" class="form-control" id="cin" #cin="ngModel"
+                [class.is-invalid]="cin.invalid && cin.touched" required placeholder="Entrer cin" name="cin"
+                [(ngModel)]="cinText">
+        </div>
+        <!--Nom-->
+        <div class="mb-3 mt-3">
+            <label for="nom">Nom:</label>
+            <input type="text" class="form-control" id="nom" #nom="ngModel"
+                [class.is-invalid]="nom.invalid && nom.touched" required placeholder="Entrer nom" name="nom"
+                [(ngModel)]="nomText">
+        </div>
+        <!--Prenom-->
+        <div class="mb-3 mt-3">
+            <label for="prenom">Prenom:</label>
+            <input type="text" class="form-control" id="prenom" #prenom="ngModel"
+                [class.is-invalid]="prenom.invalid && prenom.touched" required placeholder="Entrer prenom" name="prenom"
+                [(ngModel)]="prenomText">
+        </div>
+
+        <!--mail-->
+        <div class="mb-3 mt-3">
+            <label for="mail">E-mail:</label>
+            <input type="text" class="form-control" id="mail" #mail="ngModel"
+                [class.is-invalid]="mail.invalid && mail.touched" required placeholder="Entrer mail" name="mail"
+                [(ngModel)]="mailText">
+        </div>
+        <!--tel-->
+        <div class="mb-3 mt-3">
+            <label for="tel">N° tel:</label>
+            <input type="text" class="form-control" id="tel" #tel="ngModel"
+                [class.is-invalid]="tel.invalid && tel.touched" required placeholder="Entrer tel" name="tel"
+                [(ngModel)]="telText">
+        </div>
+        <!--adresse-->
+        <div class="mb-3">
+            <label for="adresse">Adresse:</label>
+            <input type="text" class="form-control" id="adresse" #adresse="ngModel"
+                [class.is-invalid]="adresse.invalid && adresse.touched" placeholder="Enter adresse" name="adresse"
+                required [(ngModel)]="adresseText">
+
+        </div>
+        <!--age-->
+        <div class="mb-3 mt-3">
+            <label for="age">Age:</label>
+            <input type="number" class="form-control" id="age" #age="ngModel"
+                [class.is-invalid]="age.invalid && age.touched" required placeholder="Entrer age" name="age"
+                [(ngModel)]="ageText">
+        </div>
+        <!--etat-->
+        <div class="mb-3 mt-3">
+            <label for="etet">Etat:</label>
+            <select id="inputState" class="form-control" name="etet" #etet="ngModel" [(ngModel)]="etat">
+                <option value=""></option>
+                <option value="S">Responsable de stock</option>
+                <option value="L">Responsable de livraison</option>
+            </select>
+        </div>
+
+        <button class="btn btn-primary">Ajouter</button>
+    </form>
+</div>
+<script src="//cdn.jsdelivr.net/npm/sweetalert2@11"></script>

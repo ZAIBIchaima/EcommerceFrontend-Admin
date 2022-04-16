@@ -1,0 +1,92 @@
+<!-- Page-header start -->
+<div class="">
+    <div class="page-header card">
+        <div class="row align-items-end">
+            <div class="col-lg-8">
+                <div class="page-header-title">
+                    <span> <i class="icofont icofont-table bg-c-blue"></i></span>
+                    <div class="d-inline">
+                        <span class="d-block">
+                            <h4>Employe</h4>
+                        </span>
+
+                    </div>
+                </div>
+            </div>
+            <div class="col-lg-4">
+                <div class="page-header-breadcrumb">
+                    <ul class="breadcrumb">
+                        <li class="breadcrumb-item">
+
+                            <button (click)="formulaireAjouter()" type="button"
+                                class="btn btn-secondary">Ajouter</button>
+
+
+                        </li>
+
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<!-- Page-header end -->
+
+
+<!-- <div class="col-5">
+    <input class="form-control" type="text" placeholder="Search..." [(ngModel)]="searchText" id="example-text-input">
+</div> -->
+<br>
+
+<div class="row">
+    <div class="col-sm-12">
+        <!-- Contextual classes table starts -->
+        <div class="table-responsive">
+            <table class="table">
+                <thead>
+                    <tr>
+                        <th>Cin</th>
+                        <th>Nom</th>
+                        <th>Prénom</th>
+                        <th>E-mail</th>
+                        <th>Téléphone</th>
+                        <th>Adresse</th>
+                        <th>Age</th>
+
+                    </tr>
+                </thead>
+                <tbody>
+                    <!-- <tr *ngFor="let emp of employes | filter_employe:searchText ;"> -->
+                    <tr *ngFor="let emp of employes ">
+
+                        <td>{{emp.cin}}</td>
+                        <td>{{emp.nom}}</td>
+                        <td>{{emp.prenom}}</td>
+                        <td>{{emp.mail}}</td>
+                        <td>{{emp.tel}}</td>
+                        <td>{{emp.adresse}}</td>
+                        <td>{{emp.age}}</td>
+                        <td>
+
+                            <button (click)="SupprimerEmploye(emp.id)" class="btns"><i class="fa fa-trash"></i></button>
+                            &nbsp;
+                            <button (click)="ModifierEmploye(emp.id)" class="btnn"><i class="fa fa-edit"></i></button>
+
+
+
+                        </td>
+                    </tr>
+
+                </tbody>
+            </table>
+        </div>
+        <!-- </app-card> -->
+        <!-- Contextual classes table ends -->
+
+    </div>
+</div>
+
+
+
+
+<script src="//cdn.jsdelivr.net/npm/sweetalert2@11"></script>

@@ -1,0 +1,91 @@
+<!-- Page-header start -->
+<div class="">
+    <div class="page-header card">
+        <div class="row align-items-end">
+            <div class="col-lg-8">
+                <div class="page-header-title">
+                    <span> <i class="icofont icofont-table bg-c-blue"></i></span>
+                    <div class="d-inline">
+                        <span class="d-block">
+                            <h4>Factures</h4>
+                        </span>
+
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </div>
+</div>
+<!-- Page-header end -->
+
+
+<div class="col-5">
+    <input class="form-control" type="text" placeholder="Search..." [(ngModel)]="searchText" id="example-text-input">
+</div>
+<br>
+
+<div class="row">
+    <div class="col-sm-12">
+        <!-- Contextual classes table starts -->
+        <div class="table-responsive">
+            <table class="table">
+                <thead>
+                    <tr>
+                        <th>Code</th>
+                        <th>TVA</th>
+                        <th>Nom de société</th>
+                        <th>Adresse</th>
+                        <th>Quantite</th>
+                        <th>articleFac_id</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <!-- <tr *ngFor="let emp of employes | filter_employe:searchText ;"> -->
+                    <tr *ngFor="let facture of factures | filterFacture:searchText">
+                        <td>{{facture.code}}</td>
+                        <td>{{facture.tva}}&nbsp;%</td>
+                        <td>{{facture.nom_societe}}</td>
+                        <td>{{facture.adresse}}</td>
+                        <td>{{facture.quantite}}</td>
+                        <td>{{facture.articleFac_id}}</td>
+                        <td>
+
+                            <button (click)="SupprimerEmploye(emp.id)" class="btns"><i class="fa fa-trash"></i></button>
+                            &nbsp;
+                            <button (click)="ModifierEmploye(emp.id)" class="btnn"><i class="fa fa-edit"></i></button>
+                            &nbsp;
+                            <button class="btnc" (click)="openLarge(contentdemarche,emp.id)"><i
+                                    class="fa fa-align-left"></i>
+                            </button>
+
+                        </td>
+                    </tr>
+
+
+                </tbody>
+            </table>
+        </div>
+        <!-- </app-card> -->
+        <!-- Contextual classes table ends -->
+
+    </div>
+</div>
+
+<!-- <div class="card-body">
+    <div class="divider"></div>
+    <ng-template #contentdemarche let-c="close" let-d="dismiss">
+        <div class="modal-header">
+            <h4 class="modal-title ">Ajouter les inforamtion de Catégorie</h4>
+            <button type="button" class="close" aria-label="Close" (click)="d('Cross click')">
+                <span aria-hidden="true">&times;</span>
+            </button>
+        </div>
+        <div class="modal-body">
+            <app-ajouter-categorie></app-ajouter-categorie>
+        </div>
+    </ng-template>
+
+</div> -->
+
+<script src="//cdn.jsdelivr.net/npm/sweetalert2@11"></script>
